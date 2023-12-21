@@ -1,5 +1,5 @@
 // DataComponent.jsx
-
+import App from "../App";
 import elephant from "../images/elephant.jpeg"; // Import your elephant image here
 
 const DataComponent = () => {
@@ -23,8 +23,13 @@ const DataComponent = () => {
     },
   ];
 
-  return imageData;
+  return (
+    <div className="container">
+      {imageData.map((element) => {
+        // console.log(element);
+        return <App key={element.id} props={element} />;
+      })}
+    </div>
+  );
 };
-
-
 export default DataComponent;
